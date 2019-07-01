@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnwstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ieropaie <ieropaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/30 17:37:24 by ieropaie          #+#    #+#             */
-/*   Updated: 2019/06/30 17:37:30 by ieropaie         ###   ########.fr       */
+/*   Created: 2019/06/26 02:53:41 by ieropaie          #+#    #+#             */
+/*   Updated: 2019/06/30 05:26:44 by ieropaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	res;
-	int	negative;
+#include "libft.h"
 
-	negative = 1;
-	res = 0;
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
-			*str == '\v' || *str == '\f' || *str == '\r'))
-		++str;
-	if (*str == '-')
-		negative = -1;
-	if (*str == '-' || *str == '+')
-		++str;
-	while (*str && *str >= '0' && *str <= '9')
+void		ft_putnwstr(wchar_t *s, int n)
+{
+	int		i;
+
+	i = 0;
+	while (s[i] != '\0' & n > 0)
 	{
-		res = res * 10 + (*str - 48);
-		++str;
+		if (ft_wcharlen(s[i]) > n)
+			break ;
+		n -= ft_wcharlen(s[i]);
+		ft_putwchar(s[i++]);
 	}
-	return (res * negative);
 }

@@ -6,7 +6,7 @@
 /*   By: ieropaie <ieropaie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 02:38:04 by ieropaie          #+#    #+#             */
-/*   Updated: 2018/12/26 05:46:55 by ieropaie         ###   ########.fr       */
+/*   Updated: 2019/06/30 05:28:17 by ieropaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,14 @@ int					ft_isupper(int c);
 int					ft_islower(int c);
 int					ft_wordcount(char const *s, char c);
 void				ft_swap(int *a, int *b);
+int					ft_strnlen(char *str, int n);
+void				ft_putnstr(char *str, int n);
+void				ft_putwchar(wchar_t c);
+void				ft_putnwstr(wchar_t *s, int n);
+char				*ft_strallocc(const char *s, char c);
+char				*ft_stpcpyc(char *dst, const char *src, char c);
+char				*ft_strqdupc(const char **s1, char c);
+size_t				ft_strlenc(const char *s, char c);
+int					ft_wcharlen(wchar_t c);
 
 #endif
